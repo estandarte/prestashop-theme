@@ -1,4 +1,4 @@
-name: estandarte_starter_theme
+name: Estandarte Starter Theme
 display_name: Estandarte Starter
 version: 0.0.1
 author:
@@ -18,85 +18,61 @@ meta:
     layout-both-columns:
       name: Three Columns
       description: One large central column and 2 side columns.
-    layout-left-column:
+    layout-left-side-column:
       name: Two Columns, small left column
       description: Two columns with a small left column
-    layout-right-column:
+    layout-right-side-column:
       name: Two Columns, small right column
       description: Two columns with a small right column
 
 global_settings:
   configuration:
-    PS_IMAGE_QUALITY: png
-  modules:
-   to_enable:
-     - ps_linklist
+    PS_QUICK_VIEW: false
+
   hooks:
     custom_hooks:
       - name: displayFooterBefore
         title: displayFooterBefore
         description: Add a widget area above the footer
     modules_to_hook:
-      displayNav1:
-        - ps_contactinfo
-      displayNav2:
+      displayNav:
+        - ps_shoppingcart
         - ps_languageselector
         - ps_currencyselector
         - ps_customersignin
-        - ps_shoppingcart
       displayTop:
         - ps_mainmenu
-        - ps_searchbar
       displayHome:
         - ps_imageslider
         - ps_featuredproducts
         - ps_banner
-        - ps_customtext
-      displayFooterBefore:
-        - ps_emailsubscription
-        - ps_socialfollow
       displayFooter:
-        - ps_linklist
-        - ps_customeraccountlinks
         - ps_contactinfo
-      displayLeftColumn:
-        - ps_categorytree
-        - ps_facetedsearch
-      displaySearch:
-        - ps_searchbar
-      displayProductAdditionalInfo:
-        - ps_sharebuttons
-      displayReassurance:
-        - blockreassurance
-      displayOrderConfirmation2:
-        - ps_featuredproducts
-      displayCrossSellingShoppingCart:
-        - ps_featuredproducts
 
   image_types:
     cart_default:
-      width: 125
-      height: 125
+      width: 80
+      height: 80
       scope: [products]
     small_default:
-      width: 98
-      height: 98
+      width: 125
+      height: 125
       scope: [products, categories, manufacturers, suppliers]
     medium_default:
-      width: 452
-      height: 452
-      scope: [products, manufacturers, suppliers]
+      width: 300
+      height: 300
+      scope: [products, categories, manufacturers, suppliers]
+    large_default:
+      width: 500
+      height: 500
+      scope: [products]
     home_default:
       width: 250
       height: 250
       scope: [products]
-    large_default:
-      width: 800
-      height: 800
-      scope: [products, manufacturers, suppliers]
     category_default:
-      width: 141
-      height: 180
+      width: 960
+      height: 350
       scope: [categories]
     stores_default:
       width: 170
@@ -107,8 +83,5 @@ theme_settings:
   default_layout: layout-full-width
 
   layouts:
-    category: layout-left-column
-    best-sales: layout-left-column
-    new-products: layout-left-column
-    prices-drop: layout-left-column
-    contact: layout-left-column
+    category: layout-left-side-column
+    best-sales: layout-left-side-column
